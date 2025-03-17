@@ -1,107 +1,131 @@
-/* Definindo as variáveis de cores */
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap');
+
 :root {
-    --cor-de-fundo: #3498db; /* Azul */
-    --cor-de-fundo-secundario: #dbd834; /* Amarelo */
-    --botao-ativo: red; /* Cor do botão ativo */
-    --botao-inativo: black; /* Cor do botão inativo */
-    --texto-fundo: green; /* Cor do texto no fundo */
+    --cor-de-fundo: #1E1E1E;
+    --verde: #6FFF57;
+    --branco: #FFFFFF;
+    --botao-ativo: #3A375E;
+    --botao-inativo: rgba(58, 55, 94, 0.5);
+    --texto-fundo: rgba(58, 55, 94, 0.3);
 }
 
-/* Resetando algumas configurações padrões */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Definindo a aparência do corpo da página */
 body {
-    font-family: 'Arial', sans-serif; /* Fonte básica */
-    background-color: var(--cor-de-fundo); /* Usando a cor de fundo azul */
-    color: var(--texto-fundo); /* Cor do texto em verde */
-    line-height: 1.6;
-    padding: 20px;
+    background-color: var(--cor-de-fundo);
+    color: var(--branco);
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+
+.conteudo-principal {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-}
-
-/* Cabeçalho (h1, h2, h3) */
-h1, h2, h3 {
-    color: white; /* Títulos em branco */
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-/* Estilo de links */
-a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    padding: 5px 10px;
-    background-color: var(--cor-de-fundo-secundario); /* Fundo amarelo */
-    border-radius: 5px;
-}
-
-a:hover {
-    background-color: var(--botao-ativo); /* Altera cor ao passar o mouse */
-}
-
-/* Estilo de botões */
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: var(--botao-inativo); /* Botão inicialmente inativo */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-/* Botão ativo ao ser clicado ou focado */
-button:active, button:hover {
-    background-color: var(--botao-ativo); /* Muda para vermelho */
-}
-
-/* Estilo do conteúdo principal */
-.container {
-    text-align: center;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 800px;
-}
-
-/* Estilo de formulário */
-input, textarea {
+    max-width: 1200px;
     width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    margin: 0 auto;
 }
 
-input:focus, textarea:focus {
-    border-color: var(--cor-de-fundo); /* Destaca o campo de foco com azul */
+.titulo-principal {
+    text-align: left;
+    width: 100%;
+    font-size: 32px;
 }
 
-/* Rodapé */
-footer {
+.titulo-principal span {
+    color: var(--verde);
+}
+
+
+.botao {
+    font-family: 'Chakra Petch', sans-serif;
+    background-color: var(--botao-inativo);
+    color: var(--branco);
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    font-size: 18px;
+    align-items: center;
+    width: 100%;
+    border-bottom: 4px solid var(--botao-ativo);
+    border-left: 2px solid var(--botao-ativo);
+    border-right: 2px solid var(--botao-ativo);
+    border-top: none;
+}
+
+.botao:first-child {
+    border-radius: 40px 40px 0 0;
+}
+
+.botoes {
+    display: block;
+}
+
+.botao.ativo {
+    background-color: var(--botao-ativo);
+    border-bottom: 4px solid var(--verde);
+}
+
+.abas-textos {
+    background-color: var(--texto-fundo);
+    padding: 40px;
+    border-radius: 0 0 40px 40px;
+}
+
+.aba-conteudo.ativo {
+    display: block;
+}
+
+.aba-conteudo {
+    display: none;
+}
+
+.aba-conteudo-titulo-principal {
+    font-size: 28px;
     text-align: center;
-    margin-top: 20px;
-    font-size: 14px;
-    color: white;
 }
 
-/* Adicionando uma cor suave de fundo secundária */
-.secondary-background {
-    background-color: var(--cor-de-fundo-secundario);
-    padding: 10px;
-    border-radius: 5px;
-    color: black;
+.aba-conteudo-titulo-secundario {
+    text-align: center;
+    color: var(--verde);
+    text-transform: uppercase;
 }
 
-    
+.contador {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contador-digito {
+    padding: 0 16px;
+    text-align: center;
+    min-width: 100px;
+}
+
+.contador-digito-numero {
+    font-size: 80px;
+    margin: 0;
+
+}
+
+.contador-digito-texto {
+    color: var(--verde);
+    font-size: 20px;
+    margin: 0;
+
+}
+
+@media screen and (min-width: 768px) {
+    .botoes {
+        display: flex;
+    }
+
+    .botao:first-child {
+        border-radius: 40px 0 0 0;
+    }
+
+    .botao:last-child {
+        border-radius: 0 40px 0 0;
+    }
+}
